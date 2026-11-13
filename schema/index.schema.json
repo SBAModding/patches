@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SBAModLoader patch index",
+  "type": "object",
+  "required": ["schemaVersion", "games"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "games": {
+      "type": "object",
+      "description": "Keyed by Android package name.",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["patches"],
+        "properties": {
+          "name": { "type": "string" },
+          "patches": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/patch" }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "patch": {
+      "type": "object",
+      "required": ["id", "name", "patchVersion", "gameVersion", "gameHash", "url", "sha256", "size"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "name": { "type": "string", "minLength": 1 },
+        "patchVersion": { "type": "integer", "minimum": 1 },
+        "gameVersion": { "type": "string", "minLength": 1, "description": "Must equal the installed game's version name." },
+        "gameHash": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "SHA-256 of the installed game's base APK." },
+        "url": { "type": "string", "format": "uri", "description": "HTTPS URL of the patch zip. May be relative to index.json." },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "SHA-256 of the patch zip." },
+        "size": { "type": "integer", "minimum": 1, "description": "Size of the patch zip in bytes." }
+      },
+      "additionalProperties": false
+    }
+  }
+}

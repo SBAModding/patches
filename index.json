@@ -1,0 +1,21 @@
+{
+  "$schema": "./schema/index.schema.json",
+  "schemaVersion": 1,
+  "games": {
+    "com.Earthkwak.Platformer": {
+      "name": "Super Bear Adventure",
+      "patches": [
+        {
+          "id": "pairip-removal",
+          "name": "Pairip removal",
+          "patchVersion": 1,
+          "gameVersion": "13.0.8",
+          "gameHash": "2e645c66e89461a8c2b49b8670554eb2806e27aaef99d6b23334af2929e45af8",
+          "url": "https://raw.githubusercontent.com/SBAModding/patches/main/patches/com.Earthkwak.Platformer/13.0.8/pairip-removal-v1.zip",
+          "sha256": "bc4f1447ec57ab3dfcca2eb0391155bce837b596db391de983a8fe87579d4d21",
+          "size": 45084016
+        }
+      ]
+    }
+  }
+}
