@@ -14,6 +14,16 @@
           "url": "https://raw.githubusercontent.com/SBAModding/patches/main/patches/com.Earthkwak.Platformer/13.0.8/pairip-removal-v1.zip",
           "sha256": "bc4f1447ec57ab3dfcca2eb0391155bce837b596db391de983a8fe87579d4d21",
           "size": 45084016
+        },
+        {
+          "id": "game-patch",
+          "name": "Game patch",
+          "patchVersion": 1,
+          "gameVersion": "13.0.9",
+          "gameHash": "2bc71ec674fc6f78d4f7aa801a793403675d8002531bde3da1c891979fcfb1df",
+          "url": "https://raw.githubusercontent.com/SBAModding/patches/main/patches/com.Earthkwak.Platformer/13.0.9/game-patch-v1.zip",
+          "sha256": "632348b38e5abdaa41ad7181444897f34c1faf6016ab587acc9bfb368c431eb1",
+          "size": 45281530
         }
       ]
     }
